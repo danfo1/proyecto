@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN MEC-CAR GT</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <script src="https://kit.fontawesome.com/82559006af.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--BARRA DE NAVEGACION-->
+    <header class="menu">
+        <div class="ancho">
+          <div class="logo">
+            <img src="../static/imgs/logomec/logo.png"  alt="LOGO MEC-CAR GT" class="logo">
+          </div>
+          <nav>
+            <div class="caja">
+              <a href="./home.html#fondocarrusel">Inicio</a>
+              <a href="./home.html#fondovista2">Servicios</a>
+              <a href="./home.html#fondovista3">Conocenos</a>
+              <a href="./login.html">Iniciar sesion</a>
+          </div>
+          </nav>
+      </header>
+    <div class="ladoizq">
+        <div class="loginbox">
+            <!-- Alerta flash -->
+            <div id="alert" class="{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0][1] }}{% endif %}{% endwith %}">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {{ messages[0]}}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <!-- Fin de alerta flash -->
+
+            <form class="form" action="/login" method="POST">
+                <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+                <div class="input-box">
+                    <samp class="icon" class="form-input" name="usuario"></samp>
+                    <input type="text" name="usuario" required>
+                    <label>Ingrese su usuario</label>
+                </div>
+                <div class="input-box" >
+                    <samp class="icon" class="form-input" name="contrasena"></samp>
+                    <input type="password" name="contrasena" required>
+                    <label>Ingrese su contraseña</label>
+                </div>
+                <div class="forgot">
+                    <a href="#">¿Olvidó su contraseña?</a>
+                </div>
+                <button type="submit">Iniciar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+</html>
