@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="alert" class="{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0][1] }}{% endif %}{% endwith %}">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {{ messages[0]}}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <form method="POST" action="actualizar_contraseña">
+        <label for="contrasena_nueva">Contraseña Nueva:</label>
+        <input type="password" id="contrasena_nueva" name="contrasena_nueva" required>
+        
+        <label for="confirmar_contrasena">Confirmar Contraseña:</label>
+        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+        
+        <button type="submit">Actualizar Contraseña</button>
+    </form>
+
+</body>
+</html>
